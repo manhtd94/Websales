@@ -1,0 +1,40 @@
+.navbar {
+  background-color: rgba(59, 139, 78, 0.85) !important;
+  width: 100%;
+}
+.navbar-nav>li{
+  padding-right: 20px;
+}
+
+.navbar-nav>li>a{
+  color: #ffffff;
+}
+
+.login{
+  width: 200px;
+  height: 30px;
+}
+.login>a{
+  width: 100%;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+nav {
+  z-index: 999;
+  /* position: fixed; */
+
+}
+
+.dropdown-menu{
+  background-color: rgba(31, 75, 41, 0.85) !important;
+}
+
+.dropdown-item{
+  color: #ffffff;
+}
+
+.dropdown-item:hover{
+  font-weight: bold;
+  background-color: rgba(31, 75, 41, 0.85) !important;
+}

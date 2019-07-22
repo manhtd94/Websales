@@ -1,0 +1,9 @@
+.card {
+  background-color: rgb(245, 243, 238) !important;
+  border: none;
+}
+
+img{
+  height: 475px;
+  margin: 25px 0;
+}

@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="container">
+      <div class="pricing-header px-3 py-3 pb-md-4 mx-auto text-center">
+        <h3>Find product do you want</h3>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+            <select name="" id="" class="optionSort form-control m-2" [(ngModel)]="idCategory" name="category" (change)="changeProduts()">
+              <option value="0" >-----------All-----------</option>
+              <option *ngFor="let cate of listCategory"  [value]="cate.id">{{ cate.name }}</option>
+            </select>
+          </form>
+        </div>
+      </div>
+  </div>
+</nav>

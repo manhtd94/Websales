@@ -1,0 +1,47 @@
+.display-4>a {
+  text-decoration: none;
+  color: grey;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+.display-4>a:hover {
+  color: rgba(49, 221, 89, 0.85) !important;
+}
+
+.btn-primary {
+  width: 100px;
+  background-color: rgba(31, 75, 41, 0.85) !important;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.btn-primary:hover {
+  color: rgba(31, 75, 41, 0.85) !important;
+  border: 1px solid rgba(31, 75, 41, 0.85) !important;
+  background-color: #ffffff !important;
+}
+
+.card-img-top{
+  height: 200px;
+}
+.filterProduct>p, .filterProduct>select{
+  float: right;
+}
+select{
+  width: 200px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.filterProduct>p{
+  margin-top: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.clear{
+  clear: both;
+}

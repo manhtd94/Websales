@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-left">
+    <h3 class="display-4">
+      <a href="#">All </a> /
+      <a href="#">New Product </a> /
+      <a href="#">Best Sale</a>
+    </h3>
+  </div>
+
+  <div class="filterProduct my-3">
+
+    <select class="browser-default custom-select" [(ngModel)]="filterPrice">
+      <option value="All" selected>All Product</option>
+      <option value="Low">Price Low</option>
+      <option value="High">Price High</option>
+    </select>
+
+    <p>Filter By</p>
+
+    <div class="clear"></div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-3" *ngFor="let product of (listProduct | sortByPrice:filterPrice)">
+      <div class="card mb-3 shadow-sm">
+        <img src="../../../../assets/image/ss4.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text text-center">{{ product.name }}</p>
+          <p class="card-text text-center">{{ product.price }}</p>
+          <a class="btn btn-primary mr-2" [routerLink]="['/detail/' + product.id]" role="button">Detail</a>
+          <button class="btn btn-primary" role="button" (click)=addToCart(product)>Add to Cart</button>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="bd-example">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

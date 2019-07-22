@@ -1,0 +1,16 @@
+.thead {
+  background: rgba(72, 184, 91, 0.85) !important;
+}
+
+.thead>tr>th {
+  color: #ffffff;
+  width: 20%;
+}
+
+table{
+  background: #f1f0ed;
+}
+
+.bg{
+  background: #ddd7ca;
+}
