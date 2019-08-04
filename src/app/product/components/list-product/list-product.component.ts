@@ -1,3 +1,4 @@
+import { DataApiService } from './../../../services/data-api.service';
 import { CartService } from './../../../services/cart.service';
 import { Product } from './../../../model/product';
 import { DataService } from './../../../services/data.service';
@@ -16,10 +17,11 @@ export class ListProductComponent implements OnInit {
 
   idCategory: number;
   listProduct: Product[];
+  productsAPI: Product[];
 
   numberTest: number;
 
-  constructor(private data: DataService, private cart: CartService) {}
+  constructor(private data: DataService, private cart: CartService, private dataAPI: DataApiService) {}
 
   addToCart(product: Product) {
     const item = new Item(product, 1);
@@ -28,12 +30,8 @@ export class ListProductComponent implements OnInit {
 
   ngOnInit() {
     this.idCategory = this.data.getValueOfCategory();
-    // this.listProduct = this.data.getListProduct(this.idCategory);
-    // this.data.idCateFromSearch$.subscribe(numberTest => this.numberTest = numberTest);
     this.data.productsByCateogory$.subscribe(productsByCateogory => this.listProduct = productsByCateogory);
-
-    // console.log('in list ' + this.numberTest);
-    // console.log(this.listProduct);
+    this.dataAPI.getProducts().subscribe(data => this.productsAPI = data);
   }
 
 }

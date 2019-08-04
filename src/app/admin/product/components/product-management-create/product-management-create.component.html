@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Normal</strong> Form
+  </div>
+  <div class="card-body card-block">
+    <form action="" method="post" class="" (submit)="createProduct(newProduct)">
+      <div class="form-group"><label for="nf-password" class=" form-control-label">Name</label>
+        <input type="text" id="nf-password" name="productName" class="form-control" [(ngModel)]="newProduct.name"><span
+          class="help-block">Please enter your name</span>
+      </div>
+      <div class="form-group"><label for="nf-password" class=" form-control-label">Detail</label>
+        <input type="text" id="nf-password" name="productDetail" placeholder="Enter Password.." class="form-control"
+          [(ngModel)]="newProduct.detail"><span class="help-block">Please enter your password</span></div>
+
+      <div class="form-group"><label for="nf-password" class=" form-control-label">Price</label>
+        <input type="text" id="nf-password" name="productPrice" placeholder="Enter Password.." class="form-control"
+          [(ngModel)]="newProduct.price"><span class="help-block">Please enter your password</span></div>
+
+      <div class="form-group"><label for="nf-password" class=" form-control-label">PriceNew</label>
+        <input type="text" id="nf-password" name="productPriceNew" placeholder="Enter Password.." class="form-control"
+          [(ngModel)]="newProduct.priceNew"><span class="help-block">Please enter your password</span></div>
+
+      <div class="form-group"><label for="nf-password" class=" form-control-label">Image</label>
+        <input type="text" id="nf-password" name="image" placeholder="Enter Password.." class="form-control"
+          [(ngModel)]="newProduct.image"><span class="help-block">Please enter your password</span></div>
+
+      <div class="form-group"><label for="nf-password" class=" form-control-label">Cate</label> <br>
+        <select name="" id="" [(ngModel)]="newProduct.category.id" name="cate">
+          <option *ngFor="let cat of categories" [value]="cat.id"> {{ cat.name }}</option>
+        </select>
+      </div>
+
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary btn-sm">
+          <i class="fa fa-dot-circle-o"></i> Submit
+        </button>
+        <button type="reset" class="btn btn-danger btn-sm">
+          <i class="fa fa-ban"></i> Reset
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

@@ -1,9 +1,9 @@
-import { Product } from "./../model/product";
-import { Item } from "./../model/item";
-import { Injectable } from "@angular/core";
+import { Product } from './../model/product';
+import { Item } from './../model/item';
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class CartService {
   cartItem: Map<number, Item>;

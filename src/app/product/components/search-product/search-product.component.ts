@@ -36,7 +36,7 @@ export class SearchProductComponent implements OnInit {
       this.productsByCateogory = [];
       for (const product of this.arrProduct) {
         // tslint:disable-next-line: triple-equals
-        if (product.category == this.idCategory) {
+        if (product.category.id == this.idCategory) {
           this.productsByCateogory.push(product);
         }
       }

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,7 +23,13 @@ import { ContentAboutusComponent } from './home/components/content-aboutus/conte
 import { ContentContactComponent } from './home/components/content-contact/content-contact.component';
 import { ListItemComponent } from './cart/components/list-item/list-item.component';
 import { CartPageComponent } from './cart/components/cart-page/cart-page.component';
-import { ComponentsComponent } from './admin/components/components.component';
+import { ProductManagementPageComponent } from './admin/product/components/product-management-page/product-management-page.component';
+import { ProductManagementListComponent } from './admin/product/components/product-management-list/product-management-list.component';
+import { ProductManagementEditComponent } from './admin/product/components/product-management-edit/product-management-edit.component';
+import { AdminPageComponent } from './admin/admin-page/admin-page.component';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
+import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
+import { ProductManagementCreateComponent } from './admin/product/components/product-management-create/product-management-create.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +49,20 @@ import { ComponentsComponent } from './admin/components/components.component';
     ContentContactComponent,
     ListItemComponent,
     CartPageComponent,
-    ComponentsComponent
+    ProductManagementPageComponent,
+    ProductManagementListComponent,
+    ProductManagementEditComponent,
+    AdminPageComponent,
+    AdminNavbarComponent,
+    AdminMenuComponent,
+    ProductManagementCreateComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    RouterModule.forRoot(routesConfig)
+    RouterModule.forRoot(routesConfig),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

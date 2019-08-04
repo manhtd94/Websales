@@ -45,16 +45,16 @@ export class DataService {
     this.arrProduct = arrProduct;
   }
 
-  filterByCategory(numb: number) {
-    if (numb === 0) {
-      return this.arrProduct;
-    } else {
-      for (const prodcut of this.arrProduct) {
-        if (prodcut.category === numb) {
-          this.newArrProduct.push(prodcut);
-          return this.newArrProduct;
-        }
-      }
-    }
-  }
+  // filterByCategory(numb: number) {
+  //   if (numb === 0) {
+  //     return this.arrProduct;
+  //   } else {
+  //     for (const prodcut of this.arrProduct) {
+  //       if (prodcut.category === numb) {
+  //         this.newArrProduct.push(prodcut);
+  //         return this.newArrProduct;
+  //       }
+  //     }
+  //   }
+  // }
 }

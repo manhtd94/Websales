@@ -5,7 +5,7 @@ import { from } from 'rxjs';
 
 @Pipe({ name: 'sortByPrice' })
 export class Sort implements PipeTransform {
-  transform(data: Product[], sortPrice: string, filterCateogy: number) {
+  transform(data: Product[], sortPrice: string) {
     if (sortPrice === 'All') {
       return data;
     } else if (sortPrice === 'Low') {
