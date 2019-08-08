@@ -7,19 +7,27 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataApiService {
-  readonly linkApi = 'http://localhost:8080/api/sales/';
+  readonly linkApi = 'http://localhost:8080/api/sales';
 
   constructor(private httpClient: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.linkApi + 'products');
+    return this.httpClient.get<Product[]>(this.linkApi + '/products');
   }
 
   getProduct(idProduct: number): Observable<Product> {
-    return this.httpClient.get<Product>(this.linkApi + 'products/' + idProduct);
+    return this.httpClient.get<Product>(this.linkApi + '/products/' + idProduct);
   }
 
-  createProduct(formProduct: Product) {
-    return this.httpClient.post<Product>(this.linkApi + 'products', formProduct);
+  createProduct(formProduct: Product): Observable<Product> {
+    return this.httpClient.post<Product>(this.linkApi + '/products', formProduct);
+  }
+
+  editProduct(formProduct: Product): Observable<Product> {
+    return this.httpClient.put<Product>(this.linkApi + '/products/' + formProduct.id, formProduct);
+  }
+
+  deleteProduct(idProduct: number): Observable<Product> {
+    return this.httpClient.delete<Product>(this.linkApi + '/products/' + idProduct);
   }
 }

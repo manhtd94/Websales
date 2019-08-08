@@ -68,7 +68,9 @@
                         <td>{{ product.detail }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.priceNew }}</td>
-                        <td>âcscasc</td>
+                        <td> <a [routerLink]="['/edit-product/' + product.id]" routerLinkActive="router-link-active" >Edit</a>
+                          <button (click)=deleteProduct(product.id) >Delete</button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>

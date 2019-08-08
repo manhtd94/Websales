@@ -1,3 +1,4 @@
+import { ProductManagementEditComponent } from './../admin/product/components/product-management-edit/product-management-edit.component';
 // tslint:disable-next-line: max-line-length
 import { ProductManagementCreateComponent } from '../admin/product/components/product-management-create/product-management-create.component';
 import { AdminPageComponent } from '../admin/admin-page/admin-page.component';
@@ -13,5 +14,6 @@ export const routesConfig: Routes = [
   { path: '', component: HomePageComponent},
   { path: 'cart', component: CartPageComponent},
   { path: 'admin', component: AdminPageComponent},
-  { path: 'create-product', component: ProductManagementCreateComponent}
+  { path: 'create-product', component: ProductManagementCreateComponent},
+  { path: 'edit-product/:id', component: ProductManagementEditComponent}
 ];

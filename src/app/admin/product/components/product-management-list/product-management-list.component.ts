@@ -1,5 +1,4 @@
 import { Product } from './../../../../model/product';
-import { products } from 'src/app/data/data-product';
 import { DataApiService } from './../../../../services/data-api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,10 +13,21 @@ export class ProductManagementListComponent implements OnInit {
 
   constructor(private data: DataApiService) {}
 
-  ngOnInit() {
+  refreshPage() {
     this.data.getProducts().subscribe(data => {
       this.products = data;
       this.lengthOfProducts = this.products.length;
     });
+  }
+
+  ngOnInit() {
+    this.refreshPage();
+  }
+
+  deleteProduct(idProduct: number) {
+    this.data.deleteProduct(idProduct).subscribe(data => {
+      this.refreshPage();
+    });
+    // this.refreshPage();
   }
 }
