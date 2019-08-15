@@ -11,13 +11,13 @@
         <li class="nav-item active">
           <a class="nav-link" [routerLink]="['']" >
             <i class="fa fa-home"></i>
-            Home <span class="sr-only">(current)</span></a>
+            TRANG CHỦ <span class="sr-only">(current)</span></a>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Category
+            THỂ LOẠI
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <div *ngFor="let cate of listCategory">
@@ -27,28 +27,28 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/products']">Product</a>
+          <a class="nav-link" [routerLink]="['/products']">SẢN PHẨM</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/cart">Cart</a>
+          <a class="nav-link" routerLink="/cart">GIỎ HÀNG</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">DỊCH VỤ</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Service</a>
+          <a class="nav-link" href="#">CHÚNG TÔI</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active" >LIÊN HỆ</a>
           </li>
       </ul>
 
       <div class="login">
-        <a href="#" class="btn btn-outline-primary" role="button" aria-pressed="true">Login </a>
+        <a href="#" class="btn btn-outline-primary" role="button" aria-pressed="true"> LOGIN </a>
       </div>
 
       <router-outlet></router-outlet>

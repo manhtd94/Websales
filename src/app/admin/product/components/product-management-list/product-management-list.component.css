@@ -1,0 +1,33 @@
+.center-parent {
+  position: relative;
+}
+
+.center-me {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-success{
+  margin: 0 3px;
+}
+
+.btn-new{
+  background: green;
+  color: #ffffff;
+  height: calc(1.5em + .5rem + 2px);
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+
+.btn-new:hover {
+  color: green;
+  background: #ffffff;
+  border: 1px solid green;
+}
+
+.table {
+  margin: 20px 0;
+}

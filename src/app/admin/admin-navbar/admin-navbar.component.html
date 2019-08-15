@@ -7,20 +7,19 @@
 
     <ul class="list-unstyled components">
       <li>
-        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">MANAGEMENT</a>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản lý</a>
         <ul class="collapse list-unstyled" id="pageSubmenu">
           <li>
-            <a href="#">Page 1</a>
+            <a href="#">Thể loại</a>
           </li>
           <li>
-            <a href="#">Page 2</a>
+            <a [routerLink]="['/admin/list-product']" routerLinkActive="router-link-active" >Sản phẩm</a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#">Page 3</a>
-          </li>
+          </li> -->
         </ul>
       </li>
     </ul>
-
   </nav>
 </div>

@@ -1,3 +1,4 @@
+import { RoutesAdminConfig } from './config/admin-routes';
 import { Sort } from './pipe/sort-by-price.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -5,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -15,7 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductPageComponent } from './product/components/product-page/product-page.component';
 import { DetailPageComponent } from './product/components/detail-page/detail-page.component';
 import { from } from 'rxjs';
-import { routesConfig } from './config/routes';
+import { RoutesConfig } from './config/routes';
 import { ContentCategoryComponent } from './home/components/content-category/content-category.component';
 import { HomePageComponent } from './home/components/home-page/home-page.component';
 import { ContentServiceComponent } from './home/components/content-service/content-service.component';
@@ -30,6 +32,8 @@ import { AdminPageComponent } from './admin/admin-page/admin-page.component';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
 import { ProductManagementCreateComponent } from './admin/product/components/product-management-create/product-management-create.component';
+import { ContactPageComponent } from './contact/contact-page/contact-page.component';
+import { PagenotfoundComponent } from './404/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -56,13 +60,19 @@ import { ProductManagementCreateComponent } from './admin/product/components/pro
     AdminNavbarComponent,
     AdminMenuComponent,
     ProductManagementCreateComponent,
+    ContactPageComponent,
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    RouterModule.forRoot(routesConfig),
-    HttpClientModule
+    RoutesConfig,
+    RoutesAdminConfig,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBMpR9FOTjkJGa5vVgcQyOHBnhvnqf31yE'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

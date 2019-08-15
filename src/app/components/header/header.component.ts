@@ -1,5 +1,7 @@
+import { Category } from './../../model/category';
 import { categories } from '../../data/data-category';
 import { Component, OnInit } from '@angular/core';
+import { CateDataService } from 'src/app/services/cate-data.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  listCategory = categories;
+  listCategory: Category[];
 
-  constructor() { }
+  constructor(private cateService: CateDataService) { }
 
   ngOnInit() {
+    this.cateService.getCategories().subscribe(data => {
+      this.listCategory = data;
+    });
   }
 
 }

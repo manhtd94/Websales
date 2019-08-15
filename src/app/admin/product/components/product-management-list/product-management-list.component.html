@@ -1,3 +1,4 @@
+
 <div class="content mt-3">
   <div class="animated fadeIn">
     <div class="row">
@@ -9,23 +10,51 @@
           <div class="card-body">
             <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
               <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="dataTables_length" id="bootstrap-data-table-export_length"><label>Show <select
-                        name="bootstrap-data-table-export_length" aria-controls="bootstrap-data-table-export"
-                        class="custom-select custom-select-sm form-control form-control-sm">
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="-1">All</option>
-                      </select> entries</label></div>
+                <div class="col-sm-12 col-md-4">
+                  <a class="btn btn-new" [routerLink]="['/admin/create-product']"
+                    routerLinkActive="router-link-active">Thêm sản phẩm mới</a>
+
+                  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    Launch demo modal
+                  </button> -->
+
+                  <!-- Modal
+                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Thêm sản phẩm</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <app-product-management-create></app-product-management-create>
+                        </div>
+                        <!-- <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
                 </div>
 
-                <a [routerLink]="['/create-product']" routerLinkActive="router-link-active" >NEW</a>
+                <!-- <div class="col-sm-12 col-md-4">
+                    <div class="dataTables_length" id="bootstrap-data-table-export_length"><label>Show <select
+                          name="bootstrap-data-table-export_length" aria-controls="bootstrap-data-table-export"
+                          class="custom-select custom-select-sm form-control form-control-large">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="-1">All</option>
+                        </select> entries</label></div>
+                  </div> -->
 
-                <div class="col-sm-12 col-md-6">
-                  <div id="bootstrap-data-table-export_filter" class="dataTables_filter"><label>Search:<input
-                        type="search" class="form-control form-control-sm" placeholder=""
-                        aria-controls="bootstrap-data-table-export"></label></div>
+                <div class="col-sm-12 col-md-4">
+                  <input type="search" class="form-control form-control-sm" placeholder="Search"
+                    aria-controls="bootstrap-data-table-export">
                 </div>
               </div>
               <div class="row">
@@ -62,14 +91,33 @@
                     </thead>
                     <tbody *ngFor="let product of products">
                       <tr role="row" class="odd">
-                        <td class="sorting_1">{{ product.id }}</td>
+                        <td class="sorting_1 center-parent">
+                          <div class="center-me">{{ product.id }}</div>
+                        </td>
+
                         <td> <img [src]="product.image" alt="" srcset="" style="width: 100px;"></td>
-                        <td>{{ product.name }}</td>
+                        <td class="center-parent">
+                          <div class="center-me">{{ product.name }}</div>
+                        </td>
+
                         <td>{{ product.detail }}</td>
-                        <td>{{ product.price }}</td>
-                        <td>{{ product.priceNew }}</td>
-                        <td> <a [routerLink]="['/edit-product/' + product.id]" routerLinkActive="router-link-active" >Edit</a>
-                          <button (click)=deleteProduct(product.id) >Delete</button>
+
+                        <td class="center-parent">
+                          <div class="center-me">{{ product.price }}</div>
+                        </td>
+
+
+                        <td class="center-parent">
+                          <div class="center-me">{{ product.priceNew }}</div>
+                        </td>
+
+                        <td class="center-parent">
+                          <div class="center-me">
+                            <button class="btn btn-success fa fa-edit" [routerLink]="['/admin/edit-product/' + product.id]"
+                              routerLinkActive="router-link-active"></button>
+                            <button class="btn btn-danger fa fa-times-circle-o"
+                              (click)=deleteProduct(product.id)></button>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
