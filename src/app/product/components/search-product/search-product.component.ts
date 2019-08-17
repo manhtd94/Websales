@@ -1,3 +1,6 @@
+import { DataApiService } from './../../../services/data-api.service';
+import { Category } from './../../../model/category';
+import { CateDataService } from './../../../services/cate-data.service';
 import { Product } from './../../../model/product';
 import { DataService } from './../../../services/data.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,19 +13,21 @@ import { products } from 'src/app/data/data-product';
   styleUrls: ['./search-product.component.css']
 })
 export class SearchProductComponent implements OnInit {
-  listCategory = categories;
+  listCategory: Category[];
 
-  arrProduct = products;
+  arrProduct: Product[];
   productsByCateogory: Product[] = [];
   idCategory = 0;
   // this.filterByCate.setValueOfCategory(this.idCategory);
 
-  constructor(private data: DataService) {}
+  constructor(private data: DataService, private dateCate: CateDataService, private dataPro: DataApiService) {}
 
   ngOnInit(): void {
     // this.arrProduct = products;
     // console.log(this.arrProduct);
+    this.dataPro.getProducts().subscribe(item => this.arrProduct = item);
     this.data.setProductsByCateogory(this.arrProduct);
+    this.dateCate.getCategories().subscribe(item => this.listCategory = item);
   }
 
   changeProduts() {
@@ -31,7 +36,6 @@ export class SearchProductComponent implements OnInit {
     // tslint:disable-next-line: triple-equals
     if (this.idCategory == 0) {
       this.data.setProductsByCateogory(this.arrProduct);
-      console.log(this.arrProduct);
     } else {
       this.productsByCateogory = [];
       for (const product of this.arrProduct) {

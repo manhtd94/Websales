@@ -46,7 +46,7 @@ export class ProductManagementEditComponent implements OnInit {
 
     if (this.productEdit.id != null) {
       this.data.editProduct(this.productEdit).subscribe(data => {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin/list-product']);
       });
     }
   }

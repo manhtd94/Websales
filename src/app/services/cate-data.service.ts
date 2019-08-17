@@ -15,4 +15,8 @@ export class CateDataService {
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(this.cateAPI);
   }
+
+  getCategory(idCat: number): Observable<Category> {
+    return this.http.get<Category>(this.cateAPI + '/' + idCat);
+  }
 }

@@ -41,7 +41,7 @@ export class ProductManagementCreateComponent implements OnInit {
     if (product.id === 0) {
       this.data.createProduct(product).subscribe(res => {
         console.log(res);
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin/list-product']);
       });
     }
   }

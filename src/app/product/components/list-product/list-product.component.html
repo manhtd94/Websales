@@ -22,7 +22,7 @@
 
   <div class="row">
 
-    <div class="col-md-3" *ngFor="let product of (productsAPI | sortByPrice:filterPrice)">
+    <div class="col-md-3" *ngFor="let product of (listProduct | sortByPrice:filterPrice)">
       <div class="card mb-3 shadow-sm">
         <img src="../../../../assets/image/ss2.jpg" class="card-img-top" alt="...">
         <div class="card-body">

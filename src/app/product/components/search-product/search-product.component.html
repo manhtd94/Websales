@@ -7,7 +7,7 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
             <select name="" id="" class="optionSort form-control m-2" [(ngModel)]="idCategory" name="category" (change)="changeProduts()">
-              <option value="0" >-----------All-----------</option>
+              <option value="0" selected="selected">-----------All-----------</option>
               <option *ngFor="let cate of listCategory"  [value]="cate.id">{{ cate.name }}</option>
             </select>
           </form>

@@ -30,8 +30,9 @@ export class ListProductComponent implements OnInit {
 
   ngOnInit() {
     this.idCategory = this.data.getValueOfCategory();
+    this.dataAPI.getProducts().subscribe(item => this.listProduct = item);
     this.data.productsByCateogory$.subscribe(productsByCateogory => this.listProduct = productsByCateogory);
-    this.dataAPI.getProducts().subscribe(data => this.productsAPI = data);
+    // this.dataAPI.getProducts().subscribe(data => this.productsAPI = data);
   }
 
 }
